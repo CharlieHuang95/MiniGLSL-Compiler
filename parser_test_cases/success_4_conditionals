@@ -1,0 +1,10 @@
+{
+    int i = 0;
+    if (true) {
+        i = 4;
+    } else if (false) {
+        i = -1;
+    } else {
+        i = 2;
+    }
+}

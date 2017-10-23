@@ -1,0 +1,10 @@
+{
+/* Just a bunch of simple declarations */
+int i;
+float f;
+bool b;
+bvec2 bv2;
+bvec3 bv3;
+bvec4 bv4;
+}
+

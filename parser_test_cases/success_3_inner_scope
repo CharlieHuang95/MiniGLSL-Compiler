@@ -1,0 +1,5 @@
+{
+/* Can have another scope statement (open and close curly braces) */
+{
+}
+}

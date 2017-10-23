@@ -1,0 +1,67 @@
+declarations -> empty
+statements -> empty
+expression -> TRUE_C
+declarations -> empty
+type -> BVEC_T
+expression -> INT_C
+declaration -> type ID = expression;
+declarations -> declarations declaration
+type -> BVEC_T
+declaration -> type ID;
+declarations -> declarations declaration
+type -> INT_T
+arguments_opt -> empty
+function -> function_name(args_opt)
+expression -> function
+declaration -> type ID = expression;
+declarations -> declarations declaration
+statements -> empty
+scope -> { declarations statements }
+statement -> scope
+declarations -> empty
+type -> INT_T
+expression -> INT_C
+variable -> ID
+expression -> variable
+expression -> INT_C
+expression -> INT_C
+variable -> ID
+expression -> variable
+expression -> INT_C
+arguments -> expression
+arguments -> expression, arguments
+arguments -> expression, arguments
+arguments -> expression, arguments
+arguments -> expression, arguments
+arguments -> expression, arguments
+arguments_opt -> arguments
+function -> function_name(args_opt)
+expression -> function
+declaration -> type ID = expression;
+declarations -> declarations declaration
+type -> FLOAT_T
+expression -> INT_C
+expression -> INT_C
+expression -> INT_C
+expression -> expression * expression
+expression -> expression - expression
+arguments -> expression
+arguments_opt -> arguments
+function -> function_name(args_opt)
+expression -> function
+declaration -> type ID = expression;
+declarations -> declarations declaration
+type -> BOOL_T
+arguments_opt -> empty
+function -> function_name(args_opt)
+expression -> function
+declaration -> type ID = expression;
+declarations -> declarations declaration
+statements -> empty
+scope -> { declarations statements }
+statement -> scope
+else_statement -> ELSE statement
+statement -> if (expression) statement else_statement
+statements -> statements statement
+scope -> { declarations statements }
+program -> scope

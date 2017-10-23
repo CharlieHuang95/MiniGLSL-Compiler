@@ -1,0 +1,64 @@
+declarations -> empty
+type -> INT_T
+expression -> INT_C
+expression -> INT_C
+expression -> INT_C
+expression -> expression * expression
+expression -> expression + expression
+expression -> (expression)
+expression -> -expression
+expression -> INT_C
+expression -> INT_C
+expression -> expression ^ expression
+expression -> INT_C
+expression -> expression + expression
+expression -> (expression)
+expression -> INT_C
+expression -> expression / expression
+expression -> expression - expression
+declaration -> type ID = expression;
+declarations -> declarations declaration
+type -> BOOL_T
+variable -> ID
+expression -> variable
+expression -> INT_C
+expression -> expression == expression
+expression -> (expression)
+variable -> ID
+expression -> variable
+expression -> INT_C
+expression -> expression != expression
+expression -> (expression)
+expression -> expression && expression
+expression -> INT_C
+variable -> ID
+expression -> variable
+expression -> expression >= expression
+expression -> (expression)
+expression -> expression && expression
+variable -> ID
+expression -> variable
+expression -> INT_C
+expression -> expression <= expression
+expression -> (expression)
+expression -> expression || expression
+variable -> ID
+expression -> variable
+expression -> INT_C
+expression -> expression > expression
+expression -> (expression)
+expression -> expression || expression
+expression -> INT_C
+expression -> INT_C
+expression -> expression == expression
+expression -> (expression)
+expression -> expression || expression
+expression -> FALSE_C
+expression -> TRUE_C
+expression -> expression && expression
+expression -> expression || expression
+declaration -> type ID = expression;
+declarations -> declarations declaration
+statements -> empty
+scope -> { declarations statements }
+program -> scope

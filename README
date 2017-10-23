@@ -1,0 +1,25 @@
+This short document will discuss the breakdown of work, issues we faced, and how we solved them.
+
+PLEASE NOTE that we have taken the scanner.l that was provided.
+
+APPROACH:
+    - As with all labs, we wanted to get to a testable state as quickly as possible. Through attempting this, we realized that the compiler could only be tested (trace printed out for debugging) with entire files as input, as opposed to an input stream. Then, we split the work by having one person copy out the grammar provided in the handout, and one person come up with test cases. We then tested it to make sure the functionality works.
+
+BREAKDOWN OF WORK:
+    - It was evenly divided. We worked in the GB243 lab room together to create a working implementation. We then took turns working remotely to put the finishing touches in place. We also took turns debugging and catching errors, as well as implementing fixes which will be discussed below.
+
+
+CHALLENGES FACED:
+1. There were some errors in the code provided and it took some effort to figure it out.
+    - The symbols '|' and '&' were used and we thought it was meant to be bitwise operations. However, upon reading the documentation, we realized this was a typo on their part.
+    - The precedence was specified for us in the section with '%left', '%nonassoc', and '%right'. We realized that many of these statements were not using the correct token name. For example, the symbols AND, OR, EQ were replaced with '&&', '||', '='. These were causing numerous shift/reduce conflicts because the rest of the grammar did not use these symbols.
+
+2. Precedence did span across multiple non-terminals/terminals.
+    - Initially, we followed the grammar in the hand out and had a general 'expression binary_op expression' rule in the expression's production rules. When we tested out the generated code on some associativity tests, we found that the rules were expected in the wrong order, meaning that precedence was not working. We realized that what the compiler was doing was matching an appropriate production rule within expression, and finding the appropriate binary_op to match to. This basically meant that the generated-compiler would only parse from left to right. Based on this, we understood the behaviour of the compiler to be: attempt to match all production rules in the terminal/non-terminal, and if there are multiple matches, decide the correct one based on precedence. To fix the issue, we placed all binary operations within the set of expression production rule.
+
+3. Shift/Reduce and Reduce/Reduce Warnings.
+    - The warnings were a result of having multiple valid options in the grammar production rules. The compiler did not know which to choose, which would lead to backtracking. We needed to make sure that only one production rule applied (or specify a precdence in case of multiple).
+    - One instance that popped up was the ELSE statement in if-else statements. There are two production rules within statement that followed 'IF expression statement else_statement'. This led the compiler to have the option of shift or reduce. We solved this issue by specifying precdence for ELSE and WO_ELSE (without else).
+
+TESTING
+We wrote up some test cases under $cwd/parser_test_cases/. These were broken up into three main categories: fail, success, and association. Fails were expected to fail, successes were expected to succeed, and there were expectations on the outputs of association testcases.

@@ -1,0 +1,7 @@
+{
+    ivec4 iv = ivec4(1, 2, 3, 5);
+    /* Number of arguments are not checked */
+    bvec3 bv = bvec3(1,2,3,4,5,6);
+    /* should work since we do not do detailed check on semantics */
+    bvec2 bv = bvec4(1);
+}

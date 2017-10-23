@@ -1,0 +1,40 @@
+declarations -> empty
+type -> INT_T
+expression -> INT_C
+declaration -> type ID = expression;
+declarations -> declarations declaration
+statements -> empty
+expression -> TRUE_C
+declarations -> empty
+statements -> empty
+variable -> ID
+expression -> INT_C
+statement -> variable = expression;
+statements -> statements statement
+scope -> { declarations statements }
+statement -> scope
+expression -> FALSE_C
+declarations -> empty
+statements -> empty
+variable -> ID
+expression -> INT_C
+expression -> -expression
+statement -> variable = expression;
+statements -> statements statement
+scope -> { declarations statements }
+statement -> scope
+declarations -> empty
+statements -> empty
+variable -> ID
+expression -> INT_C
+statement -> variable = expression;
+statements -> statements statement
+scope -> { declarations statements }
+statement -> scope
+else_statement -> ELSE statement
+statement -> if (expression) statement else_statement
+else_statement -> ELSE statement
+statement -> if (expression) statement else_statement
+statements -> statements statement
+scope -> { declarations statements }
+program -> scope

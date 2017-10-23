@@ -1,0 +1,9 @@
+declarations -> empty
+statements -> empty
+declarations -> empty
+statements -> empty
+scope -> { declarations statements }
+statement -> scope
+statements -> statements statement
+scope -> { declarations statements }
+program -> scope

@@ -1,0 +1,14 @@
+declarations -> empty
+type -> INT_T
+expression -> INT_C
+expression -> INT_C
+expression -> INT_C
+expression -> expression * expression
+expression -> expression + expression
+expression -> INT_C
+expression -> expression + expression
+declaration -> type ID = expression;
+declarations -> declarations declaration
+statements -> empty
+scope -> { declarations statements }
+program -> scope

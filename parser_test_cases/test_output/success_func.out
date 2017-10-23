@@ -1,0 +1,16 @@
+declarations -> empty
+type -> INT_T
+expression -> INT_C
+expression -> INT_C
+expression -> INT_C
+arguments -> expression
+arguments -> expression, arguments
+arguments -> expression, arguments
+arguments_opt -> arguments
+function -> function_name(args_opt)
+expression -> function
+declaration -> type ID = expression;
+declarations -> declarations declaration
+statements -> empty
+scope -> { declarations statements }
+program -> scope

@@ -1,0 +1,22 @@
+declarations -> empty
+type -> INT_T
+declaration -> type ID;
+declarations -> declarations declaration
+type -> FLOAT_T
+declaration -> type ID;
+declarations -> declarations declaration
+type -> BOOL_T
+declaration -> type ID;
+declarations -> declarations declaration
+type -> BVEC_T
+declaration -> type ID;
+declarations -> declarations declaration
+type -> BVEC_T
+declaration -> type ID;
+declarations -> declarations declaration
+type -> BVEC_T
+declaration -> type ID;
+declarations -> declarations declaration
+statements -> empty
+scope -> { declarations statements }
+program -> scope

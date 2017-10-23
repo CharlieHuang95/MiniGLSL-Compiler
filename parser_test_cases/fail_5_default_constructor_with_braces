@@ -1,0 +1,4 @@
+{
+    /* Should not have braces for a constructor (basically default constructor) */
+    int i();
+}

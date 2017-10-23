@@ -1,0 +1,2 @@
+/* No curly braces denoting program start/end */
+int i = 4;
